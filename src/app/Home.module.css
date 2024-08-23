@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   padding-top: 5em;
-  padding-left: 3em;
+  padding-left: 0.6em;
 }
 
 .headerContainer {
@@ -27,5 +27,6 @@
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
   transform: scale(1.05); /* Slightly scale the card on hover */
 }
+
 
 
