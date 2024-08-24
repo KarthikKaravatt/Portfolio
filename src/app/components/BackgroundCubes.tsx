@@ -27,12 +27,9 @@ function SpinningBox({ position }: { position: [number, number, number] }) {
 
   return (
     <group ref={cubeRef} position={position}>
-      <mesh >
+      <mesh>
         <Box args={[1, 1, 1]}>
-          <meshStandardMaterial
-            attach="material"
-            color={"black"}
-          />
+          <meshStandardMaterial attach="material" color={"black"} />
           <Edges color="white" lineWidth={3} />
         </Box>
       </mesh>
@@ -41,10 +38,7 @@ function SpinningBox({ position }: { position: [number, number, number] }) {
 }
 
 export default function BackgroundCubes() {
-  const [dimensions, setDimensions] = useState({
-    width: window.innerWidth,
-    height: document.documentElement.scrollHeight,
-  });
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     const handleResize = () => {
@@ -54,17 +48,20 @@ export default function BackgroundCubes() {
       });
     };
 
-    // Set initial dimensions
-    handleResize();
-
-    // Update dimensions on window resize or orientation change
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('orientationchange', handleResize);
+    // Set initial dimensions if on client
+    if (typeof window !== 'undefined') {
+      handleResize();
+      // Update dimensions on window resize or orientation change
+      window.addEventListener('resize', handleResize);
+      window.addEventListener('orientationchange', handleResize);
+    }
 
     // Cleanup event listener on unmount
     return () => {
-      window.removeEventListener('resize', handleResize);
-      window.removeEventListener('orientationchange', handleResize);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', handleResize);
+        window.removeEventListener('orientationchange', handleResize);
+      }
     };
   }, []);
 
