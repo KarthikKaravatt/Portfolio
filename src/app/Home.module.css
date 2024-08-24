@@ -1,13 +1,14 @@
-.main {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding-top: 5em;
-  padding-left: 0.6em;
+.mainCard {
+  padding-top:2em;
+  min-width: fit-content;
+  max-width: 40%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.headerContainer {
+.mainCardContent {
+  position: relative;
+  z-index: 2;
   border: 0.1em solid white;
   padding: 1em;
   border-radius: 1.5em;
@@ -21,7 +22,7 @@
     transform 0.3s ease;
 }
 
-.headerContainer:hover{
+.mainCardContent:hover{
   background-color: white;
   color: black;
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
@@ -29,4 +30,57 @@
 }
 
 
+.infoCards {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 12em;
+}
 
+.infoCardsContent {
+  display: flex;
+  flex-direction: row;
+  gap: 2em; 
+}
+
+@media (max-width: 73em) {
+  .infoCardsContent {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 73em) {
+  .infoCards {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+.infoCard {
+  height: 20em;
+  width: 20em;
+  border: 0.1em solid white;
+  padding: 1em;
+  border-radius: 1.5em;
+  background-color: #000;
+  color: white;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: 
+    background-color 0.5s ease,
+    color 0.5s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+
+}
+
+.infoCard:hover{
+  background-color: white;
+  color: black;
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
+  transform: scale(1.05); /* Slightly scale the card on hover */
+}
