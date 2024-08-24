@@ -1,12 +1,17 @@
 .mainCard {
-  padding-top:2em;
-  min-width: fit-content;
-  max-width: 40%;
+  padding-top: 2em;
+  min-height: 30%;
+  max-height: 30%;
+  max-width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
 
 .mainCardContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   position: relative;
   z-index: 2;
   border: 0.1em solid white;
@@ -14,73 +19,42 @@
   border-radius: 1.5em;
   background-color: #000;
   color: white;
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-  transition: 
+  transition:
     background-color 0.5s ease,
     color 0.5s ease,
     box-shadow 0.3s ease,
     transform 0.3s ease;
 }
 
-.mainCardContent:hover{
+.mainCardContent:hover {
   background-color: white;
   color: black;
   box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
-  transform: scale(1.05); /* Slightly scale the card on hover */
+  transform: scale(1.05);
 }
 
+.mainCardContentName {
+  font-size: 3rem;
+  text-align: center;
+}
 
-.infoCards {
-  position: relative;
-  z-index: 2;
+.mainCardContentIconContainer {
+  margin-top: 0.5em;
   display: flex;
-  flex-wrap: wrap;
-  max-width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 12em;
+  gap: 1rem;
 }
 
-.infoCardsContent {
-  display: flex;
-  flex-direction: row;
-  gap: 2em; 
+.navBar {
+  color:black;
+  display:flex;
+  flex-direction:row;
+  position:sticky;
+  margin-top:50%;
+  width: 100%;
+  height: 5em;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 2em;
+  opacity:0.8;
 }
 
-@media (max-width: 73em) {
-  .infoCardsContent {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 73em) {
-  .infoCards {
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-
-.infoCard {
-  height: 20em;
-  width: 20em;
-  border: 0.1em solid white;
-  padding: 1em;
-  border-radius: 1.5em;
-  background-color: #000;
-  color: white;
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-  transition: 
-    background-color 0.5s ease,
-    color 0.5s ease,
-    box-shadow 0.3s ease,
-    transform 0.3s ease;
-
-}
-
-.infoCard:hover{
-  background-color: white;
-  color: black;
-  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
-  transform: scale(1.05); /* Slightly scale the card on hover */
-}
